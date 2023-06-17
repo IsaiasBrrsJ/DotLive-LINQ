@@ -75,6 +75,22 @@
             #endregion
 
             //Ordenação
+            var employeeOrderBySalary = employees.OrderBy(e => e.Salary).ToList();
+            var employeeOrderByDescendingSalary = employees.OrderBy(e => e.Salary).ToList();
+
+            var employeeOrderByAreaThenSalary = employees
+                .OrderBy(e => e.BusinessArea)
+                .ThenByDescending(e => e.Salary)
+                .ToList();
+
+             
+            #region Console
+            //employeeOrderBySalary.ForEach(Console.WriteLine);
+            //employeeOrderByDescendingSalary.ForEach(Console.WriteLine);
+            employeeOrderByAreaThenSalary.ForEach(Console.WriteLine);
+            #endregion
+
+
 
             //Agrupamento
 
