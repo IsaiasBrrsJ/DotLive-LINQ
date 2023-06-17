@@ -45,6 +45,7 @@
             var salaryOver20000 = employees.FirstOrDefault(e => e.Salary > 20_000m);
             var salaryGreater20000Any = employees.Any(e => e.Salary > 20_000m);
             var salaryGreaterOrEqual15000Any = employees.Any(e => e.Salary >= 15_000m);
+
             #region Console
             //Console.WriteLine(kaio);
             //Console.WriteLine(kaioI);
@@ -53,13 +54,31 @@
             //Console.WriteLine(salary10000);
             //Console.WriteLine(salaryOver20000);
             //Console.WriteLine(salaryGreater20000Any);
-            Console.WriteLine(salaryGreaterOrEqual15000Any);
+            //Console.WriteLine(salaryGreaterOrEqual15000Any);
             #endregion
+
             //Projeção
+
+            var names = employees.Select(e => e.FullName).ToList();
+
+            var employeesViewModel = employees.Select(e => new EmployeeViewModel(e.Id, e.FullName, e.BusinessArea)).ToList();
+           
+
+            var AllInvoices = employees.SelectMany(e => e.Invoices).ToList();// usando SelectMany Linq
+            //var invoices = new List<Invoice>();
+            //foreach (var employee in employees) { invoices.AddRange(employee.Invoices); } //Usando ForEach
+
+            #region Console
+            //names.ForEach(Console.WriteLine);
+            //employeesViewModel.ForEach(Console.WriteLine);
+            // AllInvoices.ForEach(Console.WriteLine);
+            #endregion
 
             //Ordenação
 
             //Agrupamento
+
+            //Junção
 
 
 
