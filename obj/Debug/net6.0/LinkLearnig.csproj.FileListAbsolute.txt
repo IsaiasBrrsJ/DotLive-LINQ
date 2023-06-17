@@ -1,0 +1,15 @@
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\bin\Debug\net6.0\LinkLearnig.exe
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\bin\Debug\net6.0\LinkLearnig.deps.json
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\bin\Debug\net6.0\LinkLearnig.runtimeconfig.json
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\bin\Debug\net6.0\LinkLearnig.dll
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\bin\Debug\net6.0\LinkLearnig.pdb
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\LinkLearnig.csproj.AssemblyReference.cache
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\LinkLearnig.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\LinkLearnig.AssemblyInfoInputs.cache
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\LinkLearnig.AssemblyInfo.cs
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\LinkLearnig.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\LinkLearnig.dll
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\refint\LinkLearnig.dll
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\LinkLearnig.pdb
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\LinkLearnig.genruntimeconfig.cache
+C:\Users\Administrador\OneDrive - UFN - Universidade Franciscana\CursoC#\LinkAula\LinkLearnig\LinkLearnig\obj\Debug\net6.0\ref\LinkLearnig.dll

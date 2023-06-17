@@ -25,5 +25,11 @@ namespace LinkLearnig
         public List<Invoice> Invoices { get; set; } = default!;
 
 
+
+        public override string ToString()
+        {
+            return $"Id: {Id}\nFullName: {FullName}\nBussinessArea: {BusinessArea}\nSalary: {Salary}\n";
+
+        }
     }
 }

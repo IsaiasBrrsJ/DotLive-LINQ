@@ -25,5 +25,10 @@ namespace LinkLearnig
 
         public DateTime GenerateAt { get; private set; }
 
+        public override string ToString()
+        {
+            return $"\nInvoices--\nId: {Id}\nReferenceMonthYear: {ReferenceMonthYear}\nEmployeeId: {EmployeeId}\nAmount: {Amount}\nGeneratAt: {GenerateAt}";
+        }
+
     }
 }
