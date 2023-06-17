@@ -36,9 +36,25 @@
             #endregion
 
             //Busca
-            var kaio = employees.Single(e => e.FullName.Equals("Kaio")); // Como não existe a pessoa é lançada uma exception
+            //var kaio = employees.Single(e => e.FullName.Equals("Kaio")); // Como não existe a pessoa ou se existir mais de uma é lançada uma exception
+            var kaioI = employees.SingleOrDefault(e => e.FullName.Equals("Kaio"));
+            var luis = employees.SingleOrDefault(e => e.FullName.Equals("Luis"));
+            var luisById = employees.SingleOrDefault(e => e.Id.Equals(1));
+            var salary10000 = employees.First(e => e.Salary == 10_000m);
+            //var salaryOver20000 = employees.First(e => e.Salary > 20_000m); lança exception
+            var salaryOver20000 = employees.FirstOrDefault(e => e.Salary > 20_000m);
+            var salaryGreater20000Any = employees.Any(e => e.Salary > 20_000m);
+            var salaryGreaterOrEqual15000Any = employees.Any(e => e.Salary >= 15_000m);
+            #region Console
             //Console.WriteLine(kaio);
-
+            //Console.WriteLine(kaioI);
+            //Console.WriteLine(luis);
+            //Console.WriteLine(luisById);
+            //Console.WriteLine(salary10000);
+            //Console.WriteLine(salaryOver20000);
+            //Console.WriteLine(salaryGreater20000Any);
+            Console.WriteLine(salaryGreaterOrEqual15000Any);
+            #endregion
             //Projeção
 
             //Ordenação
