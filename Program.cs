@@ -186,9 +186,46 @@
             //innerJoin.ForEach(Console.WriteLine);
             // innerJoinQuerySyntaxResult.ForEach(Console.WriteLine);
             //leftJoin.ForEach(Console.WriteLine);
-            leftJoinQuerySyntaxResult.ForEach(Console.WriteLine);
+            //leftJoinQuerySyntaxResult.ForEach(Console.WriteLine);
             #endregion
 
+            //Partição
+
+            var threeEmployees = employees.Take(3).ToList();
+
+            var top5Salaries = employeeOrderByDescendingSalary.Take(5).ToList();
+            var allBut5TopSalaries = employeeOrderByDescendingSalary.Skip(5).ToList();
+
+            var top5SalariesPaginated = Paginate(1, 3).ToList();
+            IEnumerable<Employee> Paginate(int page, int pageSize)
+            {
+                return employees.Skip((page -1 ) * pageSize).Take(pageSize).ToList();
+            }
+
+
+            #region Console
+            //allBut5TopSalaries.ForEach(Console.WriteLine);
+            //top5SalariesPaginated.ForEach(Console.WriteLine);
+            #endregion
+
+            //Agregação
+            var totalSalaries = employees.Sum(e => e.Salary);
+            var averageSalaries = employees.Average(e => e.Salary);
+            var minSalary = employees.Min(e => e.Salary);
+            var maxSalary = employees.Max(e => e.Salary);
+
+            var averagePerBusinessArea = employees
+                .GroupBy(e => e.BusinessArea)
+                .Select(g => new { Department = g.Key, Average = g.Average(e => e.Salary) })
+                .ToList();
+
+            #region Console
+            // Console.WriteLine("Total: "+totalSalaries);
+            //Console.WriteLine("Média: "+averageSalaries);
+            // Console.WriteLine("Min: "+ minSalary);
+            // Console.WriteLine("Max: "+maxSalary);
+            averagePerBusinessArea.ForEach(Console.WriteLine);
+            #endregion
             Console.Read();
         }
     }  
