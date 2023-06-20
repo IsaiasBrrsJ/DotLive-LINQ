@@ -83,20 +83,111 @@
                 .ThenByDescending(e => e.Salary)
                 .ToList();
 
-             
+
             #region Console
             //employeeOrderBySalary.ForEach(Console.WriteLine);
             //employeeOrderByDescendingSalary.ForEach(Console.WriteLine);
-            employeeOrderByAreaThenSalary.ForEach(Console.WriteLine);
+            //employeeOrderByAreaThenSalary.ForEach(Console.WriteLine);
             #endregion
 
 
 
             //Agrupamento
+            var employeeCountBusiness = employees
+                .GroupBy(e => e.BusinessArea)
+                .Select(g => new
+                {
+                    Department = g.Key,
+                    Count = g.Count()
+                })
+                .ToList();
+
+            var employeesOver10_000CountByArea = employees
+                .GroupBy(e => e.BusinessArea)
+                .Where(e => e.Count(e => e.Salary < 10_000m) > 0)
+                .Select(d => new
+                {
+                    Department = d.Key,
+                    Count = d.Count(e => e.Salary < 10_000m)
+                })
+                .ToList();
+
+            var amountOfInvoices = employees 
+                .GroupBy(i => i.Invoices.Count)
+                .Select
+                (  e => 
+                   new
+                   {  
+                      Count = e.Key, 
+                      Employees = e.Select(e => e.FullName).ToList() 
+                   }
+                )
+                .ToList();
+
+            #region Console
+            //employeeCountBusiness.ForEach(Console.WriteLine);
+            //employeesOver10_000CountByArea.ForEach(Console.WriteLine);
+            //amountOfInvoices.ForEach(Console.WriteLine);
+            #endregion
 
             //Junção
+            var invoices = employees.SelectMany(e => e.Invoices).ToList();
+
+            var innerJoin = employees.Join(invoices,
+                employees => employees.Id,
+                invoices => invoices.EmployeeId,
+                (employees, invoices) =>
+                 new
+                 {
+                     Name = employees.FullName,
+                     Invoice = invoices.Amount,
+                     InvoiceId = invoices.Id
+                 })
+                .ToList();// Sintaxe de método
+
+            var innerJoinQuerySyntax =
+                from employee in employees
+                join invoice in invoices
+                on employee.Id equals invoice.EmployeeId
+                select new
+                {
+                    Name = employee.FullName,
+                    Invoice = invoice.Amount,
+                    InvoiceId = invoice.Id
+                }; //Sintaxe de query
+
+            var innerJoinQuerySyntaxResult = innerJoinQuerySyntax.ToList();
 
 
+            var leftJoin = employees.GroupJoin(invoices,
+                employees => employees.Id,
+                invoices => invoices.EmployeeId,
+                (employees, invoices) =>
+                new
+                {
+                    Name = employees.FullName,
+                    Invoices = invoices.ToList().Count()
+                })
+                .ToList();
+
+            var leftJoinQuerySyntax =
+                from employee in employees
+                join invoice in invoices
+                on employee.Id equals invoice.EmployeeId into tempInvoices
+                select new
+                {
+                    Name = employee.FullName,
+                    Invoices = tempInvoices.Count()
+                };
+
+            var leftJoinQuerySyntaxResult = leftJoinQuerySyntax.ToList();
+
+            #region Console
+            //innerJoin.ForEach(Console.WriteLine);
+            // innerJoinQuerySyntaxResult.ForEach(Console.WriteLine);
+            //leftJoin.ForEach(Console.WriteLine);
+            leftJoinQuerySyntaxResult.ForEach(Console.WriteLine);
+            #endregion
 
             Console.Read();
         }
