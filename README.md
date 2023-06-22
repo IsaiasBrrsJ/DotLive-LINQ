@@ -1,2 +1,2 @@
 # DotLive-LINQ
-Aula de LINQ com c# ministrada pelo LuisDev
+Aula de LINQ e Serilog com C# AspnetCore ministrada pelo LuisDev
